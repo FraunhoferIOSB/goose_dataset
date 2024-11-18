@@ -1,0 +1,5 @@
+super_gradients==3.7.1
+matplotlib
+pillow
+numpy
+torchmetrics
