@@ -11,7 +11,7 @@ This repository contains some tools for training and benchmarking with the GOOSE
 
 - Our second paper (in review): [Excavating in the Wild: The GOOSE-Ex Dataset for Semantic Segmentation](https://goose-dataset.de/images/gooseEx.pdf).
 
-## Set-up [TODO]
+## Set-up
 
 ### Environment
 
@@ -73,7 +73,17 @@ mv gooseEx_2d_val/images/val/* goose-dataset/images/val/
 mv gooseEx_2d_val/labels/val/* goose-dataset/labels/val/
 ```
 
-## Data Visualization [TODO]
+## Data Visualization
+
+Under `tools`, some scritps can be found to visualize the GOOSE data.
+
+### 2D Data
+
+Run the `tools/visualize_2d_data.py` script to display some images from the downloaded data. Please refer to the script's argument parser for more information.
+
+
+### 3D Data [TODO]
+
 
 ## Training & Evaluation [TODO]
 
