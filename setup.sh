@@ -7,6 +7,8 @@ conda env create -f config/env.yaml
 
 conda activate goosenv
 
+pip install -e .
+
 echo "**************************************"
 echo "Installation finished!!"
 echo "**************************************"
