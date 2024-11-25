@@ -115,6 +115,11 @@ Please cite us if this data is useful for you work:
 } 
 ```
 
+## License
+
+- This **repo** is licensed under the **MIT License**.
+- The **data** is published under the **CC BY-SA 4.0 License**.
+
 ## Mantainers
 
 - [Miguel Granero](mailto:miguel.granero@iosb.fraunhofer.de)
