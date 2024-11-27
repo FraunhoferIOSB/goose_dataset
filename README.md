@@ -63,6 +63,18 @@ Run the `tools/visualize_2d_data.py` script to display some images from the down
 
 ## Training & Evaluation [TODO]
 
+### 2D Semantic Training
+
+Use the script `tools/semantic_train.py` to train a semantic segmentation model.
+For that we use the framework [SuperGradients](https://github.com/Deci-AI/super-gradients).
+There are multiple models available within this framework and the training tool enables a very simple
+yet rich training process.
+
+**Example usage of `tools/semantic_train.py`**
+```bash
+python tools/semantic_train.py /path/to/goose --epochs 20 --batch_size 10 -rw 1024 -rh 768 -lr 0.005
+```
+
 ## Other tools
 
 ## Acknowledgements [TODO]
@@ -93,7 +105,7 @@ Please cite us if this data is useful for you work:
 
 ## License
 
-- This **repo** is licensed under the **MIT License**.
+- This **repository** is licensed under the **MIT License**.
 - The **data** is published under the **CC BY-SA 4.0 License**.
 
 ## Mantainers

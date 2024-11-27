@@ -116,7 +116,7 @@ class GOOSE_Dataset(Dataset):
         dataset_dict: List[Dict],
         crop: bool = True,
         resize_size: Optional[Iterable[int]] = None,
-        crop_ratio: Optional[float] = 1.0,  # 1:1.
+        crop_ratio: Optional[float] = None,
         with_instances: bool = False,
     ):
         """
