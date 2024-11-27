@@ -33,6 +33,19 @@ def parse_args() -> ap.Namespace:
 
     return parser.parse_args()
 
+#######################################
+#######################################
+
+
+def collate_fn(batch):
+    """
+    Collate function for the Pytorch Dataloader. If a specific structure is needed for your
+    model, change it here.
+    """
+    imgs, sem_lbls = zip(*batch)
+
+    return torch.stack(imgs), torch.stack(sem_lbls)
+
 
 #######################################
 #######################################
@@ -43,7 +56,7 @@ if __name__ == "__main__":
     opts = parse_args()
 
     train_dataset, val_dataset = GOOSE_Dataset.splits_from_path(
-        opts.data_path, resize_size=[opts.rw, opts.rh], crop=True
+        opts.data_path, resize_size=[opts.resize_width, opts.resize_height], crop=True
     )
 
     ## Set-up for training
@@ -68,13 +81,19 @@ if __name__ == "__main__":
         shuffle=True,
         num_workers=5,
         drop_last=True,
+        collate_fn=collate_fn,
     )
     val_dataloader = DataLoader(
-        val_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=5, drop_last=True
+        val_dataset,
+        batch_size=BATCH_SIZE,
+        shuffle=True,
+        num_workers=5,
+        drop_last=True,
+        collate_fn=collate_fn,
     )
 
     # Trainer Set-up
-    device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+    device = "cuda" if torch.cuda.is_available() else "cpu"
     sg.setup_device(device=device)
     trainer = sg.Trainer(experiment_name=EXPERIMENT_NAME, ckpt_root_dir=CHECKPOINT_DIR)
 

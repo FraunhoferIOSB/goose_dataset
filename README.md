@@ -75,6 +75,12 @@ yet rich training process.
 python tools/semantic_train.py /path/to/goose --epochs 20 --batch_size 10 -rw 1024 -rh 768 -lr 0.005
 ```
 
+SuperGradients automatically logs some paramters to TensorBoard. It can be seen with:
+
+```bash
+tensorboard --logdir=output
+```
+
 ## Other tools
 
 ## Acknowledgements [TODO]
