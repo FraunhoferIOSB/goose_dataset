@@ -14,6 +14,8 @@ from super_gradients.common.object_names import Models
 from super_gradients.training.metrics.segmentation_metrics import IoU
 from torch.utils.data import DataLoader
 
+from super_gradients.training.losses.dice_loss import GeneralizedDiceLoss
+
 from goosetools import GOOSE_Dataset
 
 #######################################
@@ -113,7 +115,7 @@ if __name__ == "__main__":
         "lr_decay_factor": 0.1,
         "initial_lr": opts.lr,
         "optimizer": "sgd",
-        "loss": "cross_entropy",
+        "loss": GeneralizedDiceLoss(),
         "average_best_models": False,
         "greater_metric_to_watch_is_better": True,
         "loss_logging_items_names": ["loss"],
