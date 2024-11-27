@@ -3,13 +3,16 @@
 <!-- ![logo](static/goose_logo_share.jpg) -->
 ![logo](static/goose_logo.png)
 
+<center>
+
+![Static Badge](https://img.shields.io/badge/GOOSE-PDF?label=arXiv&color=red&link=https%3A%2F%2Farxiv.org%2Fabs%2F2310.16788)
+![Static Badge](https://img.shields.io/badge/GOOSE_EX-PDF?label=arXiv&color=red&link=https%3A%2F%2Fgoose-dataset.de%2Fimages%2FgooseEx.pdf)
+![Static Badge](https://img.shields.io/badge/GOOSE_Website-Web?label=Website&color=blue&link=https%3A%2F%2Fgoose-dataset.de%2F)
+![Static Badge](https://img.shields.io/badge/Documentation-Web?label=Docs&color=blue&link=https%3A%2F%2Fgoose-dataset.de%2Fdocs%2F)
+
+</center>
+
 This repository contains some tools for training and benchmarking with the GOOSE Dataset.
-
-- Visit the official GOOSE website for more information: [goose-dataset.de](https://goose-dataset.de/).
-
-- Our first publication: [The GOOSE Dataset for Perception in Unstructured Environments](https://arxiv.org/abs/2310.16788).
-
-- Our second paper (in review): [Excavating in the Wild: The GOOSE-Ex Dataset for Semantic Segmentation](https://goose-dataset.de/images/gooseEx.pdf).
 
 ## Download
 
