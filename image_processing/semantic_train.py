@@ -30,7 +30,7 @@ def parse_args() -> ap.Namespace:
     parser.add_argument("--batch_size", "-bs", type=int, default=5)
     parser.add_argument("--resize_width", "-rw", type=int, default=768)
     parser.add_argument("--resize_height", "-rh", type=int, default=768)
-
+    parser.add_argument("--crop", action="store_true")
     parser.add_argument("--lr", "-lr", type=float, default=0.005)
 
     return parser.parse_args()
@@ -58,7 +58,9 @@ if __name__ == "__main__":
     opts = parse_args()
 
     train_dataset, val_dataset = GOOSE_Dataset.splits_from_path(
-        opts.data_path, resize_size=[opts.resize_width, opts.resize_height], crop=True
+        opts.data_path,
+        resize_size=[opts.resize_width, opts.resize_height],
+        crop=opts.crop,
     )
 
     ## Set-up for training

@@ -24,13 +24,8 @@ def parse_args() -> argparse.Namespace:
 
     ## Pre-processing
     parser.add_argument("--crop", action="store_true")
-    parser.add_argument(
-        "--resize_size",
-        nargs=2,
-        type=int,
-        default=(768, 768),
-        help="Resize shape of imgs",
-    )
+    parser.add_argument("--resize_width", "-rw", type=int, default=768)
+    parser.add_argument("--resize_height", "-rh", type=int, default=768)
 
     opt = parser.parse_args()
 
@@ -76,7 +71,9 @@ if __name__ == "__main__":
     ## Load data
     validation_dict = load_splits(opt.path, ["val"])[0]
     validation_dataset = GOOSE_Dataset(
-        validation_dict, crop=opt.crop, resize_size=opt.resize_size
+        validation_dict,
+        crop=opt.crop,
+        resize_size=[opt.resize_width, opt.resize_height],
     )
 
     n_classes = 64
