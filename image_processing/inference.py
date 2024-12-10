@@ -1,15 +1,14 @@
 import argparse
 import fnmatch
 import os
-from tqdm import tqdm
+
+import numpy as np
 import super_gradients as sg
 from goosetools.inference import load_image_tensor, run_inference
-from super_gradients.common.object_names import Models
 from PIL import Image
-from torchvision.transforms import Resize, InterpolationMode, ToPILImage
-import torch
-import numpy as np
-import matplotlib.pyplot as plt
+from super_gradients.common.object_names import Models
+from torchvision.transforms import Resize
+from tqdm import tqdm
 
 
 def parse_args() -> argparse.Namespace:
@@ -56,12 +55,6 @@ def find_images(input_path):
                 image_paths.append(relative_path)
 
     return image_paths
-
-
-def save_mask_tensor(tensor: torch.Tensor, path: str):
-    class_ids_np = tensor.numpy()
-    pil_image = Image.fromarray(class_ids_np)
-    pil_image.save(path)
 
 
 if __name__ == "__main__":
