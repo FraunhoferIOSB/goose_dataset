@@ -39,7 +39,7 @@ yet rich training process.
 
 **Example usage of `tools/semantic_train.py`**
 ```bash
-python tools/semantic_train.py /path/to/goose --epochs 20 --batch_size 10 -rw 1024 -rh 768 -lr 0.005
+python semantic_train.py /path/to/goose --epochs 20 --batch_size 10 -rw 1024 -rh 768 -lr 0.005 --crop
 ```
 
 SuperGradients automatically logs some paramters to TensorBoard. It can be seen with:
@@ -47,3 +47,14 @@ SuperGradients automatically logs some paramters to TensorBoard. It can be seen 
 ```bash
 tensorboard --logdir=output
 ```
+
+### 2D Semantic Evaluation
+
+To evaluate the performance of a trained checkpoint the script `evaluation.py` can be used.
+
+**Example usage of `tools/semantic_train.py`**
+```bash
+python evaluation.py /path/to/goose /path/o/ckpt -rw 1024 -rh 768 --crop
+```
+
+The results will be printed to the console and saved as a file to the output directory (default = output/inference/\<timestamp>)
