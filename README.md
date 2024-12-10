@@ -5,7 +5,7 @@
 
 
 [![Static Badge](https://img.shields.io/badge/GOOSE-PDF?label=arXiv&color=red&link=https%3A%2F%2Farxiv.org%2Fabs%2F2310.16788)](https://arxiv.org/abs/2310.16788)
-[![Static Badge](https://img.shields.io/badge/GOOSE_EX-PDF?label=arXiv&color=red&link=https%3A%2F%2Fgoose-dataset.de%2Fimages%2FgooseEx.pdf)](https://goose-dataset.de/images/gooseEx.pdf)
+[![Static Badge](https://img.shields.io/badge/GOOSE_EX-PDF?label=PDF&color=green&link=https%3A%2F%2Fgoose-dataset.de%2Fimages%2FgooseEx.pdf)](https://goose-dataset.de/images/gooseEx.pdf)
 [![Static Badge](https://img.shields.io/badge/GOOSE_Website-Web?label=Website&color=blue&link=https%3A%2F%2Fgoose-dataset.de%2F)](https://goose-dataset.de/)
 [![Static Badge](https://img.shields.io/badge/Documentation-Web?label=Docs&color=blue&link=https%3A%2F%2Fgoose-dataset.de%2Fdocs%2F)](https://goose-dataset.de/docs/)
 
@@ -30,7 +30,9 @@ Run the `tools/visualize_2d_data.py` script to display some images from the down
 
 ### 3D Data [TODO]
 
-## Other tools
+## Utilities
+
+Under the folder `common` some general configuration files and utils such as color maps can be found.
 
 ## Acknowledgements [TODO]
 
