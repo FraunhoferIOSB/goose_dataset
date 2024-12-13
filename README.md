@@ -3,11 +3,25 @@
 <!-- ![logo](static/goose_logo_share.jpg) -->
 ![logo](static/goose_logo.png)
 
+<div align="center">
 
 [![Static Badge](https://img.shields.io/badge/GOOSE-PDF?label=arXiv&color=red&link=https%3A%2F%2Farxiv.org%2Fabs%2F2310.16788)](https://arxiv.org/abs/2310.16788)
 [![Static Badge](https://img.shields.io/badge/GOOSE_EX-PDF?label=PDF&color=green&link=https%3A%2F%2Fgoose-dataset.de%2Fimages%2FgooseEx.pdf)](https://goose-dataset.de/images/gooseEx.pdf)
 [![Static Badge](https://img.shields.io/badge/GOOSE_Website-Web?label=Website&color=blue&link=https%3A%2F%2Fgoose-dataset.de%2F)](https://goose-dataset.de/)
 [![Static Badge](https://img.shields.io/badge/Documentation-Web?label=Docs&color=blue&link=https%3A%2F%2Fgoose-dataset.de%2Fdocs%2F)](https://goose-dataset.de/docs/)
+
+</div>
+
+<p align="center">
+    <a href="https://www.iosb.fraunhofer.de/de/kompetenzen/systemtechnik/mess-regelungs-diagnosesysteme.html">
+        <img src="static/iosb.png" alt="iosb" height="120px"/>
+    </a>
+    &emsp;&emsp;&emsp;&emsp;
+    <a href="https://www.unibw.de/tas">
+        <img src="static/tas.png" alt="tas" height="120px"/>
+    </a>
+</p>
+
 
 This repository contains some tools for training and benchmarking with the GOOSE Dataset.
 
@@ -69,3 +83,4 @@ Please cite us if this data is useful for you work:
 
 - [Miguel Granero](mailto:miguel.granero@iosb.fraunhofer.de)
 - [Raphael Hagmanns](mailto:raphael.hagmanns@iosb.fraunhofer.de)
+- [Peter Mortimer](mailto:peter.mortimer@unibw.de)
