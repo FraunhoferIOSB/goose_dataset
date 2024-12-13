@@ -12,17 +12,6 @@
 
 </div>
 
-<p align="center">
-    <a href="https://www.iosb.fraunhofer.de/de/kompetenzen/systemtechnik/mess-regelungs-diagnosesysteme.html">
-        <img src="static/iosb.png" alt="iosb" height="120px"/>
-    </a>
-    &emsp;&emsp;&emsp;&emsp;
-    <a href="https://www.unibw.de/tas">
-        <img src="static/tas.png" alt="tas" height="120px"/>
-    </a>
-</p>
-
-
 This repository contains some tools for training and benchmarking with the GOOSE Dataset.
 
 ## Download
@@ -84,3 +73,5 @@ Please cite us if this data is useful for you work:
 - [Miguel Granero](mailto:miguel.granero@iosb.fraunhofer.de)
 - [Raphael Hagmanns](mailto:raphael.hagmanns@iosb.fraunhofer.de)
 - [Peter Mortimer](mailto:peter.mortimer@unibw.de)
+
+GOOSE is a project of [Fraunhofer IOSB](https://www.iosb.fraunhofer.de/de/kompetenzen/systemtechnik/mess-regelungs-diagnosesysteme.html), [UniBW Munich](https://www.unibw.de/tas) and [University of Koblenz](https://www.uni-koblenz.de/de/informatik/icv/paulus).
