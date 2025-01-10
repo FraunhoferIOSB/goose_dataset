@@ -80,7 +80,7 @@ if __name__ == "__main__":
 
     now = datetime.now()
     output_path = os.path.join(
-        opt.output, "inference", now.strftime("%m-%d-%Y_%H:%M:%S")
+        opt.output, "evaluation", now.strftime("%m-%d-%Y_%H:%M:%S")
     )
     os.makedirs(output_path, exist_ok=False)
 

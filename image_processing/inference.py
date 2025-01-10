@@ -10,6 +10,8 @@ from super_gradients.common.object_names import Models
 from torchvision.transforms import Resize
 from tqdm import tqdm
 
+from goosetools.utils import str2bool, overlay_masks, get_colormap
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
@@ -35,6 +37,19 @@ def parse_args() -> argparse.Namespace:
         type=int,
         default=768,
         help="Height to resize the image to before inferring",
+    )
+    
+    ## Output
+    parser.add_argument(
+        "--overlay",
+        type=str2bool,
+        default=True
+    )
+    parser.add_argument(
+        "--cmap_path",
+        type=str,
+        default=None,
+        help="Path to color map json of type -> {id : [r,g,b]}"
     )
 
     opt = parser.parse_args()
@@ -72,6 +87,8 @@ if __name__ == "__main__":
     model.eval()
 
     resize_transform = Resize([opt.input_height, opt.input_width])
+    
+    cmap_dict = get_colormap(opt.cmap_path)
 
     pbar = tqdm(imgs)
     for i in pbar:
@@ -88,3 +105,10 @@ if __name__ == "__main__":
         output_path = os.path.join(opt.output, i)
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         result.save(output_path)
+        
+        if opt.overlay:
+            overlay = overlay_masks(np.transpose(img_tensor.numpy(), (1, 2, 0)), np.array(result), color_map=cmap_dict, alfa=0.7) * 255
+            overlay_img = Image.fromarray(overlay.astype(np.uint8)).convert("RGB")
+            output_path = os.path.join(opt.output, "overlay",i)
+            os.makedirs(os.path.dirname(output_path), exist_ok=True)
+            overlay_img.save(output_path)
