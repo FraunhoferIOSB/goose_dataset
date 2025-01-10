@@ -37,6 +37,8 @@ Run the `tools/visualize_2d_data.py` script to display some images from the down
 
 Under the folder `common` some general configuration files and utils such as color maps can be found.
 
+For more specific tools regarding training and data handling, have a look at the `image_processing` and `pointcloud_processing` subfolders.
+
 ## Acknowledgements [TODO]
 
 ## Citation
