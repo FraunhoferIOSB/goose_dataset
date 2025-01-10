@@ -68,4 +68,4 @@ To run the images through the models and save the inferred results use the `infe
 python inference.py /path/to/goose /path/o/ckpt -rw 1024 -rh 768 --resize --overlay true --vis_res false
 ```
 
-The results will be saved to the output directory (default = output/inference/\<timestamp>)
+The results will be saved to the output directory (default = output/inference/)
