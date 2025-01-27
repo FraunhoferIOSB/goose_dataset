@@ -51,6 +51,9 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="Path to color map json of type -> {id : [r,g,b]}"
     )
+    
+    ## Data
+    parser.add_argument("--n_classes", "-nc", type=int, default=64)
 
     opt = parser.parse_args()
 
@@ -75,12 +78,13 @@ def find_images(input_path):
 if __name__ == "__main__":
     opt = parse_args()
     imgs = find_images(opt.path)
+    n_classes = opt.n_classes
 
     ckpt: str = opt.ckpt
     ckpt = ckpt.removeprefix("file://")
     model = sg.training.models.get(
-        model_name=Models.DDRNET_39,
-        num_classes=64,
+        model_name=Models.PP_LITE_B_SEG75,
+        num_classes=n_classes,
         pretrained_weights="cityscapes",
         checkpoint_path=ckpt,
     )
@@ -88,7 +92,7 @@ if __name__ == "__main__":
 
     resize_transform = Resize([opt.input_height, opt.input_width])
     
-    cmap_dict = get_colormap(opt.cmap_path)
+    cmap_dict = get_colormap(opt.cmap_path, n_classes)
 
     pbar = tqdm(imgs)
     for i in pbar:
