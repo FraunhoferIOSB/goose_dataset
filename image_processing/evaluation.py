@@ -30,9 +30,9 @@ def parse_args() -> argparse.Namespace:
     ## Pre-processing
     parser.add_argument("--crop", action="store_true")
     parser.add_argument(
-        "--use_original_label",
+        "--use_processed_labels",
         action="store_true",
-        help="Whether to evaluate with the original labels. That means, resize the output of the model to the original size",
+        help="Whether to evaluate with the processed labels (cropped & resized) or not.",
     )
     parser.add_argument("--resize_width", "-rw", type=int, default=768)
     parser.add_argument("--resize_height", "-rh", type=int, default=768)
@@ -134,7 +134,7 @@ if __name__ == "__main__":
 
             mask = run_inference(img, model=model, threshold=0.5)
             
-            if opt.use_original_label:
+            if not opt.use_processed_labels:
                 sem_map = validation_dataset.get_original_label(i, True)
                 resize = transforms.Resize([sem_map.shape[0], sem_map.shape[1]], interpolation=InterpolationMode.NEAREST)
                 mask = resize(mask.unsqueeze(0)).squeeze(0)
