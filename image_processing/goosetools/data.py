@@ -149,13 +149,16 @@ class GOOSE_Dataset(Dataset):
         self.resize_size = resize_size
         self.crop = crop
 
-        if crop_ratio is None and resize_size is None:
+        if crop_ratio is None and resize_size is None and crop:
             print("Both resize_size and crop_ratio are undefined!")
             exit(1)
-        self.crop_ratio = (
-            crop_ratio if crop_ratio is not None else resize_size[0] / resize_size[1]
-        )
-
+        
+        self.crop_ratio = None
+        if crop:
+            self.crop_ratio = (
+                crop_ratio if crop_ratio is not None else resize_size[0] / resize_size[1]
+            )
+        
         self.with_instances = with_instances
 
     def preprocess(self, image):
@@ -252,6 +255,12 @@ class GOOSE_Dataset(Dataset):
             instances = Image.open(self.dataset_dict[index]["instance_path"]).convert("L")
 
         return image, label, instances, color
+    
+    def get_original_label(self, index, as_tensor=False):
+        label = Image.open(self.dataset_dict[index]["semantic_path"]).convert("L")
+        if as_tensor:
+            torch.from_numpy(np.array(label)).long()
+        return label
 
 
 if __name__ == "__main__":
