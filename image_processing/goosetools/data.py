@@ -16,16 +16,20 @@ def __check_labels(img_path: str, lbl_path: str) -> Tuple[bool, Optional[List]]:
     Check if pair of labels and images exist. Filter non-existing pairs.
     """
     name = os.path.basename(img_path)
-    name, ext = name.split(".")
-    name = name.split("_")[:-2]
-    name = "_".join(name)
+    name = (
+        name.removesuffix("_windshield_vis.png")
+        .removesuffix("_front.png")
+        .removesuffix("_camera_left.png")
+        .removesuffix("_realsense.png")
+    )
 
     names = []
     for l in ["color", "instanceids", "labelids"]:
         # Check if label exists
-        lbl_name = name + "_" + l + "." + ext
+        lbl_name = name + "_" + l + ".png"
         if not os.path.exists(os.path.join(lbl_path, lbl_name)):
-            return None
+            names.append(None)
+            continue
         names.append(lbl_name)
 
     return names
@@ -55,8 +59,18 @@ def process_goose_folder(img_path: str, lbl_path: str) -> List[Dict]:
                 continue
 
             valid_imgs.append(i)
-            valid_color.append(os.path.join(lbls_p, lbl_names[0]))
-            valid_insta.append(os.path.join(lbls_p, lbl_names[1]))
+            if lbl_names[0]:
+                valid_color.append(os.path.join(lbls_p, lbl_names[0]))
+            else:
+                valid_color.append(None)
+            if lbl_names[1]:
+                valid_insta.append(os.path.join(lbls_p, lbl_names[1]))
+            else:
+                valid_insta.append(None)
+
+            if not lbl_names[2]:
+                print("No label found for", i)
+                continue
             valid_lbls.append(os.path.join(lbls_p, lbl_names[2]))
 
     for i, m, p, c in zip(valid_imgs, valid_lbls, valid_insta, valid_color):
@@ -229,8 +243,13 @@ class GOOSE_Dataset(Dataset):
     def get_images(self, index):
         image = Image.open(self.dataset_dict[index]["img_path"]).convert("RGB")
         label = Image.open(self.dataset_dict[index]["semantic_path"]).convert("L")
-        color = Image.open(self.dataset_dict[index]["color_path"]).convert("RGB")
-        instances = Image.open(self.dataset_dict[index]["instance_path"]).convert("L")
+        
+        color = None
+        instances = None
+        if(self.dataset_dict[index]["color_path"]):
+            color = Image.open(self.dataset_dict[index]["color_path"]).convert("RGB")
+        if(self.dataset_dict[index]["instance_path"]):
+            instances = Image.open(self.dataset_dict[index]["instance_path"]).convert("L")
 
         return image, label, instances, color
 
