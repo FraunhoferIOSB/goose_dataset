@@ -259,7 +259,7 @@ class GOOSE_Dataset(Dataset):
     def get_original_label(self, index, as_tensor=False):
         label = Image.open(self.dataset_dict[index]["semantic_path"]).convert("L")
         if as_tensor:
-            torch.from_numpy(np.array(label)).long()
+            label = torch.from_numpy(np.array(label)).long()
         return label
 
 
