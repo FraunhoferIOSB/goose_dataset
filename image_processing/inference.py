@@ -99,6 +99,7 @@ if __name__ == "__main__":
         pbar.set_description(i)
         img_tensor = load_image_tensor(os.path.join(opt.path, i))
         orig_size = [img_tensor.shape[2], img_tensor.shape[1]]
+        img_tensor_orig = img_tensor.clone()
         if opt.resize:
             img_tensor = resize_transform(img_tensor)
         res = run_inference(img_tensor, model).numpy()
@@ -111,7 +112,7 @@ if __name__ == "__main__":
         result.save(output_path)
         
         if opt.overlay:
-            overlay = overlay_masks(np.transpose(img_tensor.numpy(), (1, 2, 0)), np.array(result), color_map=cmap_dict, alfa=0.7) * 255
+            overlay = overlay_masks(np.transpose(img_tensor_orig.numpy(), (1, 2, 0)), np.array(result), color_map=cmap_dict, alfa=0.7) * 255
             overlay_img = Image.fromarray(overlay.astype(np.uint8)).convert("RGB")
             output_path = os.path.join(opt.output, "overlay",i)
             os.makedirs(os.path.dirname(output_path), exist_ok=True)
