@@ -1,0 +1,18 @@
+labels:
+  0 : "other"
+  1 : "artificial_structures"
+  2 : "artificial_ground"
+  3 : "natural_ground"
+  4 : "obstacle"
+  5 : "vehicle"
+  6 : "vegetation"
+  7 : "human"
+color_map: # bgr
+  0: [169, 169, 169]
+  1: [222, 136, 222]
+  2: [59, 255, 235]
+  3: [127, 136, 161]
+  4: [7, 193, 255]
+  5: [54, 67, 244]
+  6: [80, 175, 76]
+  7: [255, 176, 143]
