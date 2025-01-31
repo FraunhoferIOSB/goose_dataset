@@ -14,6 +14,8 @@
 
 This repository contains some tools for training and benchmarking with the GOOSE Dataset.
 
+## The Branch for the Field Robotics Workshop Challenge at ICRA2025 is in branch [icra25](https://github.com/FraunhoferIOSB/goose_dataset/tree/icra25)
+
 ## Download
 
 The data structure and more in-depth information about the format can be found int the [documentation](https://goose-dataset.de/docs/dataset-structure/). The data is divided into 3 splits: train, test and validation. Labeled data is available for train and validation splits. 
