@@ -1,4 +1,4 @@
-# GOOSE Dataset :duck: Official Repository
+# GOOSE Dataset :duck: Repository for the FieldRobotics Workshop Challenge at ICRA 2025
 
 <!-- ![logo](static/goose_logo_share.jpg) -->
 ![logo](static/goose_logo.png)
@@ -12,7 +12,7 @@
 
 </div>
 
-This repository contains some tools for training and benchmarking with the GOOSE Dataset.
+This branch contains the scripts and tools to work with the GOOSE Dataset and run baseline experiments for the Field Robotics workshop challenge at ICRA 2025.
 
 ## Download
 
@@ -31,7 +31,15 @@ Under `tools`, some scritps can be found to visualize the GOOSE data.
 Run the `tools/visualize_2d_data.py` script to display some images from the downloaded data. Please refer to the script's argument parser for more information.
 
 
-### 3D Data [TODO]
+### 3D Data 
+
+We use the a slightly adapted version of the [semantic-kitti-api](https://github.com/PRBonn/semantic-kitti-api) visualizer, that can be run from the `tools/visualize_3d_data.py`. The only dependency is `python3-vispy`.
+
+The visualizer can be invoked using:
+```
+python3 visualize_3d_data.py --dataset data/goose/3d/
+```
+
 
 ## Utilities
 
