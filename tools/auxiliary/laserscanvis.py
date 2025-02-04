@@ -23,10 +23,12 @@
 # THE SOFTWARE.
 
 import vispy
+import re
 from vispy.scene import visuals, SceneCanvas
 import numpy as np
 from matplotlib import pyplot as plt
 from auxiliary.laserscan import LaserScan, SemLaserScan
+
 
 
 class LaserScanVis:
@@ -141,6 +143,32 @@ class LaserScanVis:
       if self.link:
         self.inst_view.camera.link(self.scan_view.camera)
 
+  def save_pointcloud(self):
+      filename = re.search(r'([^/]+)_\d+_[^/]+$', self.scan_names[self.offset]).group(1)
+      filename = filename + ".pcd"
+      points = self.scan.points
+      colors = self.scan.sem_label_color[..., ::-1] if self.semantics else None
+
+      with open(filename, 'w') as f:
+          f.write("# .PCD v0.7 - Point Cloud Data file format\n")
+          f.write("VERSION 0.7\n")
+          f.write("FIELDS x y z rgb\n")
+          f.write("SIZE 4 4 4 4\n")
+          f.write("TYPE F F F U\n")
+          f.write("COUNT 1 1 1 1\n")
+          f.write(f"WIDTH {len(points)}\n")
+          f.write("HEIGHT 1\n")
+          f.write("VIEWPOINT 0 0 0 1 0 0 0\n")
+          f.write(f"POINTS {len(points)}\n")
+          f.write("DATA ascii\n")
+
+          for i, p in enumerate(points):
+              color = colors[i] if colors is not None else np.array([1.0, 1.0, 1.0])
+              color = (color * 255).astype(np.uint8)  # Convert from [0,1] to [0,255]
+              rgb = (int(color[0]) << 16) | (int(color[1]) << 8) | int(color[2])
+              f.write(f"{p[0]} {p[1]} {p[2]} {rgb}\n")
+      print(f"Saved point cloud to {filename}")
+
   def get_mpl_colormap(self, cmap_name):
     cmap = plt.get_cmap(cmap_name)
 
@@ -234,6 +262,8 @@ class LaserScanVis:
       if self.offset < 0:
         self.offset = self.total - 1
       self.update_scan()
+    elif event.key == 'S':
+      self.save_pointcloud()
     elif event.key == 'Q' or event.key == 'Escape':
       self.destroy()
 
