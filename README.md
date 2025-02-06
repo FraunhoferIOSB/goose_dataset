@@ -33,13 +33,18 @@ Run the `tools/visualize_2d_data.py` script to display some images from the down
 
 ### 3D Data 
 
-We use the a slightly adapted version of the [semantic-kitti-api](https://github.com/PRBonn/semantic-kitti-api) visualizer, that can be run from the `tools/visualize_3d_data.py`. The only dependency is `python3-vispy`.
+We use the a slightly adapted version of the [semantic-kitti-api](https://github.com/PRBonn/semantic-kitti-api) visualizer, that can be run from the `pointcloud_processing/tools/visualize_3d_data.py`. The only dependency is `python3-vispy`.
 
 The visualizer can be invoked using:
 ```
 python3 visualize_3d_data.py --dataset data/goose/3d/
 ```
 
+If you want to visualize data from a specific sequence or platform, you can use a regex:
+
+```
+python3 visualize_3d_data.py --dataset data/goose/3d/ -r ".*spot_scenario04.*"
+```
 
 ## Utilities
 
