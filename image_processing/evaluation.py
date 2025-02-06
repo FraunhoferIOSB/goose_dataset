@@ -13,7 +13,6 @@ from goosetools.utils import str2bool
 from matplotlib import pyplot as plt
 from super_gradients.common.object_names import Models
 from torchmetrics import JaccardIndex
-import numpy as np
 from torchvision import transforms
 from torchvision.transforms import InterpolationMode
 
@@ -53,6 +52,7 @@ def parse_args() -> argparse.Namespace:
 
     ## Data
     parser.add_argument("--n_classes", "-nc", type=int, default=64)
+    parser.add_argument("--test_split_name", type=str, default="test")
 
     opt = parser.parse_args()
 
@@ -115,7 +115,7 @@ if __name__ == "__main__":
     model.eval()
 
     ## Load data
-    validation_dict = load_splits(opt.path, ["test"])[0]
+    validation_dict = load_splits(opt.path, [opt.test_split_name])[0]
     validation_dataset = GOOSE_Dataset(
         validation_dict,
         crop=opt.crop,
