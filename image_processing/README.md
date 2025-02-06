@@ -37,6 +37,19 @@ This will install and activate a conda environment with the necessary dependenci
 
 </details>
 
+## ICRA 25 - Workshop
+
+The baseline checkpoint can be downloaded [here](http://goose-dataset.de/models/challenge_ppliteseg.pth). It uses the Supergradients' PPLiteSeg _PP_LITE_B_SEG75_ model.
+
+
+The model was trained with a fixed resolution of 768 x 512 pixels (for all GOOSE & GOOSE-EX training Data) using some contrast and brightness data augmentations.
+
+To check the baseline model against the validation split:
+
+```bash
+python evaluation.py /path/to/goose/ /path/to/ckpt -rh 512 --iou true -nc 9 --test_split_name val
+```
+
 ## Examples: Training, Evaluation & Inference
 
 The following tools are based on [SuperGradients](https://github.com/Deci-AI/super-gradients) and mere usage examples on how to use and itegrate GOOSE in your own projects, or on how to use the checkpoints provided in our [webpage](https://goose-dataset.de/docs/setup/#2d-image-segmentation).
