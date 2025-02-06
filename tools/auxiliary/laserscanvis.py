@@ -143,6 +143,10 @@ class LaserScanVis:
       if self.link:
         self.inst_view.camera.link(self.scan_view.camera)
 
+  def print_filename(self):
+      filename = re.search(r'([^/]+)_\d+_[^/]+$', self.scan_names[self.offset]).group(1)
+      print(filename)
+
   def save_pointcloud(self):
       filename = re.search(r'([^/]+)_\d+_[^/]+$', self.scan_names[self.offset]).group(1)
       filename = filename + ".pcd"
@@ -264,6 +268,8 @@ class LaserScanVis:
       self.update_scan()
     elif event.key == 'S':
       self.save_pointcloud()
+    elif event.key == 'P':
+      self.print_filename()
     elif event.key == 'Q' or event.key == 'Escape':
       self.destroy()
 

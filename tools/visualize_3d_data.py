@@ -25,6 +25,8 @@
 import argparse
 import os
 import yaml
+import re
+
 from auxiliary.laserscan import LaserScan, SemLaserScan
 from auxiliary.laserscanvis import LaserScanVis
 
@@ -49,6 +51,13 @@ if __name__ == '__main__':
       default="",
       required=False,
       help='Split and Sequence to visualize. Defaults to %(default)s',
+  )
+  parser.add_argument(
+      '--reg_ex', '-r',
+      type=str,
+      default="",
+      required=False,
+      help='Regular expression to filter the sequence for.',
   )
   parser.add_argument(
       '--predictions', '-p',
@@ -91,6 +100,7 @@ if __name__ == '__main__':
       required=False,
       help='Sequence to start. Defaults to %(default)s',
   )
+
   parser.add_argument(
       '--ignore_safety',
       dest='ignore_safety',
@@ -125,6 +135,7 @@ if __name__ == '__main__':
   print("ignore_safety", FLAGS.ignore_safety)
   print("color_learning_map", FLAGS.color_learning_map)
   print("offset", FLAGS.offset)
+  print("pattern", FLAGS.reg_ex)
   print("*" * 80)
 
   # open config file
@@ -144,9 +155,14 @@ if __name__ == '__main__':
     print(f"Sequence folder {scan_paths} doesn't exist! Exiting...")
     quit()
 
+  pattern = re.compile(r'.*')
+
+  if FLAGS.reg_ex:
+      pattern = re.compile(r'{}'.format(FLAGS.reg_ex))
+
   # populate the pointclouds
   scan_names = [os.path.join(dp, f) for dp, dn, fn in os.walk(
-      os.path.expanduser(scan_paths)) for f in fn]
+      os.path.expanduser(scan_paths)) for f in fn if pattern.match(f)]
   scan_names.sort()
 
   if not FLAGS.ignore_semantics:
@@ -163,7 +179,7 @@ if __name__ == '__main__':
 
     # populate the pointclouds
     label_names = [os.path.join(dp, f) for dp, dn, fn in os.walk(
-        os.path.expanduser(label_paths)) for f in fn]
+        os.path.expanduser(label_paths)) for f in fn if pattern.match(f)]
     label_names.sort()
 
     # check that there are same amount of labels and scans
@@ -198,6 +214,8 @@ if __name__ == '__main__':
   print("To navigate:")
   print("\tb: back (previous scan)")
   print("\tn: next (next scan)")
+  print("\ts: export scan as .pcd")
+  print("\tp: Print current filename")
   print("\tq: quit (exit program)")
 
   # run the visualizer
