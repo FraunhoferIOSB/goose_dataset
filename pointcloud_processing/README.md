@@ -40,9 +40,26 @@ To train on the current baseline configuration, you can run:
 sh ./scripts/train.sh -g 1 -d goose -c semseg-pt-v3m1-0-base -n my-experiment-name
 ```
 
+The baseline model evaluated on the validation set should perform like that: 
+
+```
+Val result: mIoU/mAcc/allAcc 0.8096/0.8576/0.9197
+Class_0 - other Result: iou/accuracy 0.9686/0.9766
+Class_1 - artificial_structures Result: iou/accuracy 0.8773/0.9065
+Class_2 - artificial_ground Result: iou/accuracy 0.7097/0.7871
+Class_3 - natural_ground Result: iou/accuracy 0.8220/0.9487
+Class_4 - obstacle Result: iou/accuracy 0.4554/0.5121
+Class_5 - vehicle Result: iou/accuracy 0.8954/0.9197
+Class_6 - vegetation Result: iou/accuracy 0.9179/0.9509
+Class_7 - human Result: iou/accuracy 0.8302/0.8589
+```
+
+
 ## Submitting your results to CodaBench
 
 TODO
+- zip results
+- upload
 
 
 
