@@ -50,6 +50,40 @@ To check the baseline model against the validation split:
 python evaluation.py /path/to/goose/ /path/to/ckpt -rh 512 --iou true -nc 9 --test_split_name val
 ```
 
+With the baseline you should expect these values when evaluating agains the GOOSE validation split:
+
+```
+Metric:
+	-> 0: 0.9269827604293823
+	-> 1: 0.7645474672317505
+	-> 2: 0.9482942819595337
+	-> 3: 0.8249742388725281
+	-> 4: 0.6437028050422668
+	-> 5: 0.8964053988456726
+	-> 6: 0.8717983961105347
+	-> 7: 0.527831494808197
+	-> 8: 0.9510554671287537
+Mean: 0.8172880411148071
+Filetered Mean: 0.8172880411148071
+```
+
+### Data Submission
+
+To submit your data to the [Codabench]() competition, generate ID masks for all the images in the test set and pack them in a zip file. It should have the same folder structure as the test images:
+
+```
+-- submission.zip
+    |
+    |--- scene01
+    |     |-- <imagename1>_labelids.png
+    |     |-- <imagename2>_labelids.png
+    |
+    |--- scene02
+          |-- ...
+```
+
+**Make sure that the labels have the same name format as in the actual dataset**. They have to end in `_labelids.png`. If you have files with the same name as the input RGB images, you can use the script in `tools/rename.bash` to generate the labels with the correct name format.
+
 ## Examples: Training, Evaluation & Inference
 
 The following tools are based on [SuperGradients](https://github.com/Deci-AI/super-gradients) and mere usage examples on how to use and itegrate GOOSE in your own projects, or on how to use the checkpoints provided in our [webpage](https://goose-dataset.de/docs/setup/#2d-image-segmentation).
