@@ -22,37 +22,27 @@ It can be downloaded from [our webpage](https://goose-dataset.de/docs/setup/#dow
 
 In `scripts` you can find some scripts to directly download and unpack the 2D data.
 
-## Data Visualization
+## Category Labels
 
-Under `tools`, some scritps can be found to visualize the GOOSE data.
+For the challenge, we use the simplified label set listed below. All labels from the links above are already prepared using these labels.
 
-### 2D Data
-
-Run the `tools/visualize_2d_data.py` script to display some images from the downloaded data. Please refer to the script's argument parser for more information.
-
-
-### 3D Data 
-
-We use the a slightly adapted version of the [semantic-kitti-api](https://github.com/PRBonn/semantic-kitti-api) visualizer, that can be run from the `pointcloud_processing/tools/visualize_3d_data.py`. The only dependency is `python3-vispy`.
-
-The visualizer can be invoked using:
-```
-python3 visualize_3d_data.py --dataset data/goose/3d/
-```
-
-If you want to visualize data from a specific sequence or platform, you can use a regex:
-
-```
-python3 visualize_3d_data.py --dataset data/goose/3d/ -r ".*spot_scenario04.*"
-```
+| name                  | label_key | hex     |
+|-----------------------|-----------|---------|
+| other                 | 0         | #A9A9A9 |
+| artificial_structures | 1         | #DE88DE |
+| artificial_ground     | 2         | #EBFF3B |
+| natural_ground        | 3         | #A1887F |
+| obstacle              | 4         | #FFC107 |
+| vehicle               | 5         | #F44336 |
+| vegetation            | 6         | #4CAF50 |
+| human                 | 7         | #8FB0FF |
+| sky                   | 8         | #2196F3 |
 
 ## Utilities
 
 Under the folder `common` some general configuration files and utils such as color maps can be found.
 
 For more specific tools regarding training and data handling, have a look at the `image_processing` and `pointcloud_processing` subfolders.
-
-## Acknowledgements [TODO]
 
 ## Citation
 

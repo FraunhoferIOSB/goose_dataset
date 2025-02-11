@@ -37,6 +37,10 @@ This will install and activate a conda environment with the necessary dependenci
 
 </details>
 
+## Visualization
+
+Run the `visualize_2d_data.py` script to display some images from the downloaded data. Please refer to the script's argument parser for more information.
+
 ## ICRA 25 - Workshop
 
 The baseline checkpoint can be downloaded [here](http://goose-dataset.de/models/challenge_ppliteseg.pth). It uses the Supergradients' PPLiteSeg _PP_LITE_B_SEG75_ model.
