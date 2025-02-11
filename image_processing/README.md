@@ -50,7 +50,7 @@ To check the baseline model against the validation split:
 python evaluation.py /path/to/goose/ /path/to/ckpt -rh 512 --iou true -nc 9 --test_split_name val
 ```
 
-With the baseline you should expect these values when evaluating agains the GOOSE validation split:
+With the baseline you should expect these values when evaluating against the GOOSE validation split:
 
 ```
 Metric:
@@ -66,6 +66,13 @@ Metric:
 Mean: 0.8172880411148071
 Filetered Mean: 0.8172880411148071
 ```
+
+To infer on images with the baseline:
+
+```bash
+python inference.py /path/to/goose /path/to/ckpt -rh 512 --resize -nc 9
+```
+
 
 ### Data Submission
 
