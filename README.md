@@ -1,4 +1,4 @@
-# GOOSE Dataset :duck: Official Repository
+# GOOSE Dataset :duck: Repository
 
 <!-- ![logo](static/goose_logo_share.jpg) -->
 ![logo](static/goose_logo.png)
@@ -12,7 +12,37 @@
 
 </div>
 
-This repository contains some tools for training and benchmarking with the GOOSE Dataset.
+
+
+## :warning: Check out our [ICRA25 Challenge](https://norlab-ulaval.github.io/icra_workshop_field_robotics/#competition)!
+
+<details>
+
+<summary>Field Robotics Workshop Challenge Information</summary>
+<br>
+
+This branch currently contains the scripts and tools to work with the GOOSE Dataset and run baseline experiments for the [Field Robotics workshop challenge at ICRA 2025](https://norlab-ulaval.github.io/icra_workshop_field_robotics/#competition).
+
+
+More information on how to participate can be found in the [Codabench Challenge website]() and the `image_processing` and `pointcloud_processing` subfolders.
+
+### Category Labels for the ICRA25 Challenge
+
+For the challenge, we use the simplified label set listed below. This version of the labels can be downloaded from [here](https://goose-dataset.de/storage/2d_challenge.zip) and used to replace the original ones.
+
+| name                  | label_key | hex     |
+|-----------------------|-----------|---------|
+| other                 | 0         | #A9A9A9 |
+| artificial_structures | 1         | #DE88DE |
+| artificial_ground     | 2         | #EBFF3B |
+| natural_ground        | 3         | #A1887F |
+| obstacle              | 4         | #FFC107 |
+| vehicle               | 5         | #F44336 |
+| vegetation            | 6         | #4CAF50 |
+| human                 | 7         | #8FB0FF |
+| sky                   | 8         | #2196F3 |
+
+</details>
 
 ## The repo for the Field Robotics Workshop Challenge at ICRA2025 is in branch [icra25](https://github.com/FraunhoferIOSB/goose_dataset/tree/icra25)!
 
@@ -22,26 +52,13 @@ The data structure and more in-depth information about the format can be found i
 
 It can be downloaded from [our webpage](https://goose-dataset.de/docs/setup/#download-dataset). 
 
-In `scripts` you can find some scripts to directly download and unpack the 2D data.
-
-## Data Visualization
-
-Under `tools`, some scritps can be found to visualize the GOOSE data.
-
-### 2D Data
-
-Run the `tools/visualize_2d_data.py` script to display some images from the downloaded data. Please refer to the script's argument parser for more information.
-
-
-### 3D Data [TODO]
+In `scripts` you can find some sample scripts to directly download and unpack the 2D data.
 
 ## Utilities
 
 Under the folder `common` some general configuration files and utils such as color maps can be found.
 
 For more specific tools regarding training and data handling, have a look at the `image_processing` and `pointcloud_processing` subfolders.
-
-## Acknowledgements [TODO]
 
 ## Citation
 
