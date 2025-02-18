@@ -1,4 +1,4 @@
-# GOOSE Dataset :duck: Repository for the FieldRobotics Workshop Challenge at ICRA 2025
+# GOOSE Dataset :duck: Repository
 
 <!-- ![logo](static/goose_logo_share.jpg) -->
 ![logo](static/goose_logo.png)
@@ -12,19 +12,23 @@
 
 </div>
 
-This branch contains the scripts and tools to work with the GOOSE Dataset and run baseline experiments for the Field Robotics workshop challenge at ICRA 2025.
 
-## Download
 
-The data structure and more in-depth information about the format can be found int the [documentation](https://goose-dataset.de/docs/dataset-structure/). The data is divided into 3 splits: train, test and validation. Labeled data is available for train and validation splits. 
+## :warning: Check out our [ICRA25 Challenge](https://norlab-ulaval.github.io/icra_workshop_field_robotics/#competition)!
 
-It can be downloaded from [our webpage](https://goose-dataset.de/docs/setup/#download-dataset). 
+<details>
 
-In `scripts` you can find some scripts to directly download and unpack the 2D data.
+<summary>Field Robotics Workshop Challenge Information</summary>
+<br>
 
-## Category Labels
+This branch currently contains the scripts and tools to work with the GOOSE Dataset and run baseline experiments for the [Field Robotics workshop challenge at ICRA 2025](https://norlab-ulaval.github.io/icra_workshop_field_robotics/#competition).
 
-For the challenge, we use the simplified label set listed below. All labels from the links above are already prepared using these labels.
+
+More information on how to participate can be found in the [Codabench Challenge website]() and the `image_processing` and `pointcloud_processing` subfolders.
+
+### Category Labels for the ICRA25 Challenge
+
+For the challenge, we use the simplified label set listed below. This version of the labels can be downloaded from [here](https://goose-dataset.de/storage/2d_challenge.zip) and used to replace the original ones.
 
 | name                  | label_key | hex     |
 |-----------------------|-----------|---------|
@@ -37,6 +41,16 @@ For the challenge, we use the simplified label set listed below. All labels from
 | vegetation            | 6         | #4CAF50 |
 | human                 | 7         | #8FB0FF |
 | sky                   | 8         | #2196F3 |
+
+</details>
+
+## Download
+
+The data structure and more in-depth information about the format can be found int the [documentation](https://goose-dataset.de/docs/dataset-structure/). The data is divided into 3 splits: train, test and validation. Labeled data is available for train and validation splits. 
+
+It can be downloaded from [our webpage](https://goose-dataset.de/docs/setup/#download-dataset). 
+
+In `scripts` you can find some sample scripts to directly download and unpack the 2D data.
 
 ## Utilities
 
