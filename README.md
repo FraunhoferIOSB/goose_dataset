@@ -24,7 +24,7 @@
 This branch currently contains the scripts and tools to work with the GOOSE Dataset and run baseline experiments for the [Field Robotics workshop challenge at ICRA 2025](https://norlab-ulaval.github.io/icra_workshop_field_robotics/#competition).
 
 
-More information on how to participate can be found in the [Codabench Challenge website]() and the `image_processing` and `pointcloud_processing` subfolders.
+More information on how to participate can be found in the Codabench Challenge website ([2D](https://www.codabench.org/competitions/5743/), [3D](https://www.codabench.org/competitions/5745/)) and the `image_processing` and `pointcloud_processing` subfolders.
 
 ### Category Labels for the ICRA25 Challenge
 
