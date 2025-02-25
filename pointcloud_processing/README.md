@@ -19,7 +19,7 @@ The baseline-weights can be downloaded from the [website](https://goose-dataset.
 ```
 cd /workspace/Pointcept
 mkdir -p exp/goose/semseg-ptv3-challenge-goose-baseline/model
-wget -O exp/goose/semseg-ptv3-challenge-goose-baseline/model/model_best.pth https://goose-dataset.de/models/challenge_ptv3.pth
+wget -O exp/goose/semseg-ptv3-challenge-goose-baseline/model/model_best.pth https://bwsyncandshare.kit.edu/s/ExDe9x5gsDCQ2kW/download/challenge_ptv3.pth
 ```
 
 ## Testing on GOOSE

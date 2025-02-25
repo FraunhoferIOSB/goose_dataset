@@ -43,7 +43,7 @@ Run the `visualize_2d_data.py` script to display some images from the downloaded
 
 ## ICRA 25 - Workshop
 
-The baseline checkpoint can be downloaded [here](http://goose-dataset.de/models/challenge_ppliteseg.pth). It uses the Supergradients' PPLiteSeg _PP_LITE_B_SEG75_ model.
+The baseline checkpoint can be downloaded [here](https://bwsyncandshare.kit.edu/s/MNN2Y9SRtDQXAxq/download/challenge_ppliteseg.pth). It uses the Supergradients' PPLiteSeg _PP_LITE_B_SEG75_ model.
 
 
 The model was trained with a fixed resolution of 768 x 512 pixels (for all GOOSE & GOOSE-EX training Data) using some contrast and brightness data augmentations.
