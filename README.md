@@ -87,7 +87,7 @@ Please cite us if this data is useful for you work:
 - This **repository** is licensed under the **MIT License**.
 - The **data** is published under the **CC BY-SA 4.0 License**.
 
-## Mantainers
+## Maintainers
 
 - [Miguel Granero](mailto:miguel.granero@iosb.fraunhofer.de)
 - [Raphael Hagmanns](mailto:raphael.hagmanns@iosb.fraunhofer.de)
