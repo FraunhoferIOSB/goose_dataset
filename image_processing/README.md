@@ -80,7 +80,7 @@ python inference.py /path/to/goose /path/to/ckpt -rh 512 --resize -nc 9
 
 ### Data Submission
 
-To submit your data to the [Codabench]() competition, generate ID masks for all the images in the test set and pack them in a zip file. It should have the same folder structure as the test images:
+To submit your data to the [GOOSE 2D Semantic Segmentation Challenge](https://www.codabench.org/competitions/5743/) on Codabench, generate ID masks for all the images in the test set and pack them in a zip file. It should have the same folder structure as the test images:
 
 ```
 -- submission.zip
