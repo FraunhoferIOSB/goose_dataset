@@ -14,7 +14,7 @@ For a development setup, we overlay our Pointcept repo as well as the dataset in
 
 ## Download Pretrained weights
 
-The baseline-weights can be downloaded from the [website](https://goose-dataset.de/models/challenge_ptv3.pth) into the experiment folder:
+The baseline-weights can be downloaded from the [website](https://bwsyncandshare.kit.edu/s/ExDe9x5gsDCQ2kW/download/challenge_ptv3.pth) into the experiment folder:
 
 ```
 cd /workspace/Pointcept
