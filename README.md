@@ -44,6 +44,13 @@ For the challenge, we use the simplified label set listed below. This version of
 
 </details>
 
+## GOOSE Dataset
+
+The German Outdoor and Offroad Dataset (GOOSE) is a modern dataset specification and accompanying off-road datasets. The focus is on unstructured off-road environments as well as on a broad support for different platforms and applications in the fields of mobile robotics and deep learning.
+
+This repository contains code to process and visualize data and to run benchmarks on different baseline methods.
+It is also used to track issues of the GOOSE and GOOSE-Ex datasets, the database, website, etc, so feel free to [open an issue](https://github.com/FraunhoferIOSB/goose_dataset/issues/new?template=BLANK_ISSUE) if anything is not working as expected. 
+
 ## Download
 
 The data structure and more in-depth information about the format can be found int the [documentation](https://goose-dataset.de/docs/dataset-structure/). The data is divided into 3 splits: train, test and validation. Labeled data is available for train and validation splits. 
