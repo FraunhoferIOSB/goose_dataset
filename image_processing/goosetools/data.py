@@ -55,7 +55,8 @@ def process_goose_folder(img_path: str, lbl_path: str) -> List[Dict]:
         imgs = glob.glob(os.path.join(imgs_p, "*.png"))
         for i in imgs:
             lbl_names = __check_labels(i, lbls_p)
-            if not lbl_names:
+            if not lbl_names[2]:
+                print("No label found for", i)
                 continue
 
             valid_imgs.append(i)
@@ -68,9 +69,6 @@ def process_goose_folder(img_path: str, lbl_path: str) -> List[Dict]:
             else:
                 valid_insta.append(None)
 
-            if not lbl_names[2]:
-                print("No label found for", i)
-                continue
             valid_lbls.append(os.path.join(lbls_p, lbl_names[2]))
 
     for i, m, p, c in zip(valid_imgs, valid_lbls, valid_insta, valid_color):
