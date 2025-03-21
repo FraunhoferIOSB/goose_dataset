@@ -14,7 +14,7 @@
 
 
 
-## :warning: Check out our [ICRA25 Challenge](https://norlab-ulaval.github.io/icra_workshop_field_robotics/#competition)!
+## :star: Check out our [ICRA25 Challenge](https://norlab-ulaval.github.io/icra_workshop_field_robotics/#competition)! :star:
 
 <details>
 
