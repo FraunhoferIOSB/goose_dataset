@@ -54,33 +54,6 @@ Class_6 - vegetation Result: iou/accuracy 0.9179/0.9509
 Class_7 - human Result: iou/accuracy 0.8302/0.8589
 ```
 
-## Submitting your results to Codabench
-
-To submit your data to the [GOOSE 3D Semantic Segmentation Challenge](https://www.codabench.org/competitions/5745/) on Codabench, generate `.label` files for all the point clouds files in the test set and place them in a `.zip` file.
-
-The size of the test set depends on the competitions phase:
-- development phase (until April 15, 2025): 360 `.label` files (20% subset of the test set)
-- final phase (from April 16, 2025 to April 30, 2025): 1815 `.label` files
-
-To get the scenes for the test set submission during the development phase, please visit the **Timeline** tab on the [competition page](https://www.codabench.org/competitions/5745/).
-The final phase uses all scenes from the test sets of the GOOSE and GOOSE-EX datasets.
-
-The `.zip` file should have the following structure:
-```
--- choose_any_name_for_your_zip_file.zip
-    |
-    |--- alice_scenario01_sequence14_0000_1691670603503509000_goose.label  # prediction on scene from ALICE
-    |--- ...
-    |--- 2022-07-07_campus_no_ptp__0000_1657197242779529338_goose.label # prediction on scene from MuCAR-3
-    |--- ...
-    | --- spot_scenario01_sequence05_0000_1687364796081724000_goose.label # prediction on scene from Spot v1 (low setup)
-    |--- ...
-    | --- spot_scenario06_sequence03_0000_1706713034059226000_goose.label # prediction on scene from Spot v2 (high setup)
-```
-
-You can then submit the `.zip` file in the **My Submissions** tab on the [competition page](https://www.codabench.org/competitions/5745/).
-This requires you to have an account on Codabench and join the competition.
-
 ## Acknowledgements
 
 Please cite [Pointcept](https://github.com/Pointcept/Pointcept) if you use their model!

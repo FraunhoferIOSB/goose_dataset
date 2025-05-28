@@ -1,6 +1,7 @@
 # GOOSE Dataset :duck: Repository
 
 <!-- ![logo](static/goose_logo_share.jpg) -->
+
 ![logo](static/goose_logo.png)
 
 <div align="center">
@@ -12,50 +13,18 @@
 
 </div>
 
-
-
-## :star: Check out our [ICRA25 Challenge](https://norlab-ulaval.github.io/icra_workshop_field_robotics/#competition)! :star:
-
-<details>
-
-<summary>Field Robotics Workshop Challenge Information</summary>
-<br>
-
-This branch currently contains the scripts and tools to work with the GOOSE Dataset and run baseline experiments for the [Field Robotics workshop challenge at ICRA 2025](https://norlab-ulaval.github.io/icra_workshop_field_robotics/#competition).
-
-
-More information on how to participate can be found in the Codabench Challenge website ([2D](https://www.codabench.org/competitions/5743/), [3D](https://www.codabench.org/competitions/5745/)) and the `image_processing` and `pointcloud_processing` subfolders.
-
-### Category Labels for the ICRA25 Challenge
-
-For the challenge, we use the simplified label set listed below. This version of the labels can be downloaded from [here](https://goose-dataset.de/storage/2d_challenge.zip) and used to replace the original ones.
-
-| name                  | label_key | hex     |
-|-----------------------|-----------|---------|
-| other                 | 0         | #A9A9A9 |
-| artificial_structures | 1         | #DE88DE |
-| artificial_ground     | 2         | #EBFF3B |
-| natural_ground        | 3         | #A1887F |
-| obstacle              | 4         | #FFC107 |
-| vehicle               | 5         | #F44336 |
-| vegetation            | 6         | #4CAF50 |
-| human                 | 7         | #8FB0FF |
-| sky                   | 8         | #2196F3 |
-
-</details>
-
 ## GOOSE Dataset
 
 The German Outdoor and Offroad Dataset (GOOSE) is a modern dataset specification and accompanying off-road datasets. The focus is on unstructured off-road environments as well as on a broad support for different platforms and applications in the fields of mobile robotics and deep learning.
 
 This repository contains code to process and visualize data and to run benchmarks on different baseline methods.
-It is also used to track issues of the GOOSE and GOOSE-Ex datasets, the database, website, etc, so feel free to [open an issue](https://github.com/FraunhoferIOSB/goose_dataset/issues/new?template=BLANK_ISSUE) if anything is not working as expected. 
+It is also used to track issues of the GOOSE and GOOSE-Ex datasets, the database, website, etc, so feel free to [open an issue](https://github.com/FraunhoferIOSB/goose_dataset/issues/new?template=BLANK_ISSUE) if anything is not working as expected.
 
 ## Download
 
-The data structure and more in-depth information about the format can be found int the [documentation](https://goose-dataset.de/docs/dataset-structure/). The data is divided into 3 splits: train, test and validation. Labeled data is available for train and validation splits. 
+The data structure and more in-depth information about the format can be found int the [documentation](https://goose-dataset.de/docs/dataset-structure/). The data is divided into 3 splits: train, test and validation. Labeled data is available for train and validation splits.
 
-It can be downloaded from [our webpage](https://goose-dataset.de/docs/setup/#download-dataset). 
+It can be downloaded from [our webpage](https://goose-dataset.de/docs/setup/#download-dataset).
 
 In `scripts` you can find some sample scripts to directly download and unpack the 2D data.
 
@@ -86,7 +55,7 @@ Please cite us if this data is useful for you work:
     url={},
     conference={TBA}
     year = 2024
-} 
+}
 ```
 
 ## License
