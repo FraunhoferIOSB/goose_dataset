@@ -13,6 +13,20 @@
 
 </div>
 
+## :star: Check out our [ICRA26 Challenge](https://norlab-ulaval.github.io/icra_workshop_field_robotics/#competition)! :star:
+
+<details>
+
+<summary>Field Robotics Workshop Challenge Information</summary>
+<br>
+
+The GOOSE 2D Fine-Grained Semantic Segmentation Challenge is a competition hosted in conjunction with the [Workshop on Field Robotics at ICRA 2026 in Vienna, Austria](https://norlab-ulaval.github.io/icra_workshop_field_robotics). The challenge is based on the annotated image data of unstructured outdoor environments found in the GOOSE and GOOSE-Ex datasets. Participants are tasked with developing and testing models for 2D Semantic Segmentation of camera images taken from three different robotic platforms. The teams with the best-performing models will be awarded prizes and the opportunity to present their approach during the poster session of the Workshop on Field Robotics at ICRA 2026.
+
+More information about how to participate in the challenge can be found in its [Codabench Website](https://www.codabench.org/competitions/14257/).
+
+
+</details>
+
 ## GOOSE Dataset
 
 The German Outdoor and Offroad Dataset (GOOSE) is a modern dataset specification and accompanying off-road datasets. The focus is on unstructured off-road environments as well as on a broad support for different platforms and applications in the fields of mobile robotics and deep learning.
