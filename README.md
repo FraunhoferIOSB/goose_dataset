@@ -75,6 +75,7 @@ Please cite us if this data is useful for you work:
 ## License
 
 - This **repository** is licensed under the **MIT License**.
+- The **pretrained model weights** are licensed under the **MIT License**.
 - The **data** is published under the **CC BY-SA 4.0 License**.
 
 ## Maintainers
